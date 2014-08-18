@@ -28,6 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
     inv <- x$getInv()
     if(is.null(inv)) {
+        ## This is only executed if inv is null
         data <- x$get()
         inv <- solve(x, ...)
         x$setInv(inv)
